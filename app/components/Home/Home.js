@@ -1,12 +1,22 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import Home from './app/components/Home/Home'
 
-export default class App extends React.Component {
+
+
+export default class Home extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      name: 'mark'
+    }
+  }
+
   render() {
+    let name = this.state.name ? this.state.name : 'yo dude'
     return (
       <View style={styles.container}>
-        <Home message='wat'/>
+        <Text>{this.props.message}</Text>
+        <Text>you are {name}  </Text>
       </View>
     );
   }
