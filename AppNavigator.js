@@ -2,12 +2,13 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import Home from './app/components/Home/Home'
 import { createStackNavigator, createAppContainer } from "react-navigation";
-import Users from './app/components/Users/Users'
-
+import MentorLogin from './app/components/MentorLogin/MentorLogin';
+import PostalCode from './app/components/PostalCode/PostalCode';
 
 const AppNavigator = createStackNavigator({
   Home: Home,
-  Users: Users
+  MentorLogin: MentorLogin,
+  PostalCode: PostalCode,
 },
 {
   initialRouteName: "Home",

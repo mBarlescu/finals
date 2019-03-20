@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, Button } from 'react-native';
 
 
 
-export default class Users extends React.Component {
+export default class MentorLogin extends React.Component {
   constructor(props){
     super(props);
     this.state = {
@@ -29,21 +29,9 @@ export default class Users extends React.Component {
         <Text>you are {name}  </Text>
         <Text>you are really {namee}, and your age is {age}</Text>
         <Button
-          title="Go to Users... again"
-          onPress={() => this.props.navigation.push('Users')}
-        />
-        <Button
-          title="Go to Home"
+          title="Go Back"
           onPress={() => this.props.navigation.navigate('Home')}
         />
-        <Button
-          title="Go back"
-          onPress={() => this.props.navigation.goBack()}
-        />
-        <Button
-          title='update the title of this header'
-          onPress= {() => this.props.navigation.setParams({otherParam:'other title'})}
-          />
       </View>
     );
   }
