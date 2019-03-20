@@ -11,6 +11,31 @@ export default class Home extends React.Component {
     }
   }
 
+  static navigationOptions = ({ navigation }) => {
+    return {
+    headerTitle: 'Home',
+    headerRight: (
+      <Button
+        onPress={navigation.getParam('increaseCount')}
+        title='+1'
+        color='black'
+      />
+    )
+  }
+  };
+  componentDidMount() {
+    this.props.navigation.setParams({increaseCount: this._increaseCount});
+  }
+
+  state = {
+    count: 0
+  }
+
+  _increaseCount = () => {
+    this.setState({ count: this.state.count++})
+  }
+
+
   render() {
     let name = this.state.name ? this.state.name : 'yo dude'
     return (
@@ -19,7 +44,12 @@ export default class Home extends React.Component {
         <Text>you are {name}  </Text>
         <Button
           title="Go to Users"
-          onPress={() => this.props.navigation.navigate('Users')}
+          onPress={() => this.props.navigation.navigate('Users',
+            {
+            name: 'user1',
+            age: 26
+            }
+            )}
         />
       </View>
     );

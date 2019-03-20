@@ -3,16 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import Home from './app/components/Home/Home'
 import { createStackNavigator, createAppContainer } from "react-navigation";
 import Users from './app/components/Users/Users'
-
-
-const AppNavigator = createStackNavigator({
-  Home: Home,
-  Users: Users
-},
-{
-  initialRouteName: "Home"
-}
-);
+import AppNavigator from './AppNavigator';
 
 const AppContainer = createAppContainer(AppNavigator);
 
