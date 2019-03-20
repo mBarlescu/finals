@@ -3,11 +3,11 @@ import { StyleSheet, Text, View, Button } from 'react-native';
 
 
 
-export default class Home extends React.Component {
+export default class Users extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      name: 'mark'
+      name: 'users'
     }
   }
 
@@ -15,11 +15,19 @@ export default class Home extends React.Component {
     let name = this.state.name ? this.state.name : 'yo dude'
     return (
       <View style={styles.container}>
-        <Text>{this.props.message}</Text>
+        <Text>users here</Text>
         <Text>you are {name}  </Text>
         <Button
-          title="Go to Users"
-          onPress={() => this.props.navigation.navigate('Users')}
+          title="Go to Users... again"
+          onPress={() => this.props.navigation.push('Users')}
+        />
+        <Button
+          title="Go to Home"
+          onPress={() => this.props.navigation.navigate('Home')}
+        />
+        <Button
+          title="Go back"
+          onPress={() => this.props.navigation.goBack()}
         />
       </View>
     );
