@@ -4,11 +4,15 @@ import Home from './app/components/Home/Home'
 import { createStackNavigator, createAppContainer } from "react-navigation";
 import MentorLogin from './app/components/MentorLogin/MentorLogin';
 import PostalCode from './app/components/PostalCode/PostalCode';
+import Register from './app/components/Register/Register';
+
+
 
 const AppNavigator = createStackNavigator({
   Home: Home,
   MentorLogin: MentorLogin,
   PostalCode: PostalCode,
+  Register: Register,
 },
 {
   initialRouteName: "Home",

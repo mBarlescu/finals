@@ -5,6 +5,7 @@ import { createStackNavigator, createAppContainer } from "react-navigation";
 import MentorLogin from './app/components/MentorLogin/MentorLogin';
 import AppNavigator from './AppNavigator';
 import PostalCode from './app/components/PostalCode/PostalCode';
+import Register from './app/components/Register/Register';
 
 const AppContainer = createAppContainer(AppNavigator);
 
