@@ -5,7 +5,8 @@ import { createStackNavigator, createAppContainer } from "react-navigation";
 import MentorLogin from './app/components/MentorLogin/MentorLogin';
 import PostalCode from './app/components/PostalCode/PostalCode';
 import Register from './app/components/Register/Register';
-
+import MentorPage from './app/components/MentorPage/MentorPage';
+import Add from './app/components/MentorPage/Add';
 
 
 const AppNavigator = createStackNavigator({
@@ -13,6 +14,8 @@ const AppNavigator = createStackNavigator({
   MentorLogin: MentorLogin,
   PostalCode: PostalCode,
   Register: Register,
+  MentorPage: MentorPage,
+  Add: Add,
 },
 {
   initialRouteName: "Home",

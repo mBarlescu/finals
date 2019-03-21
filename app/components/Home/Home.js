@@ -32,6 +32,7 @@ export default class Home extends React.Component {
         title="Register to be a Mentor"
         onPress={() => this.props.navigation.navigate('Register')}
         />
+
       </View>
     );
   }

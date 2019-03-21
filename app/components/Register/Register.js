@@ -23,14 +23,19 @@ export default class SignUp extends React.Component {
     // const { navigation } = this.props;
     return (
       <View style={styles.container}>
-        <Text>Registration</Text>
+
         <TextInput style={styles.textinput}
           underlineColorAndroid={'transparent'}
           placeholder='email'
         />
         <TextInput style={styles.textinput}
           underlineColorAndroid={'transparent'}
-          placeholder='email'
+          placeholder='password'
+          secureTextEntry={true}
+        />
+        <TextInput style={styles.textinput}
+          underlineColorAndroid={'transparent'}
+          placeholder='verify password'
           secureTextEntry={true}
         />
         <TouchableOpacity style={styles.button}>
@@ -48,21 +53,23 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+    paddingLeft: 60,
+    paddingRight: 60
   },
   textinput: {
     alignSelf: 'stretch',
     height: 40,
-    marginBottom: 30,
+    marginBottom: 8,
     color: '#fff',
     borderBottomColor:'#f8f8f8',
     borderBottomWidth: 1,
   },
   button: {
-    alignSelf: 'strech',
+    alignSelf: 'stretch',
     alignItems: 'center',
-    padding: 20,
+    padding: 8,
     backgroundColor: '#59cbbd',
-    marginTop: 30,
+    marginTop: 8,
   },
   btntext: {
     color: '#fff',

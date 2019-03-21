@@ -1,11 +1,11 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button, TextInput, TouchableOpacity } from 'react-native';
 
-export default class MentorLogin extends React.Component {
+export default class MentorPage extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      name: 'okay'
+      name: 'empty for now'
     }
   // console.log('yoooooooooooooooooooooooooo', this.state.text)
   }
@@ -13,31 +13,22 @@ export default class MentorLogin extends React.Component {
 
   static navigationOptions = ({ navigation }) => {
     return {
-    headerTitle: 'Login'
+    headerTitle: 'fuck'
 
   }
   };
 
 
   render() {
-    const { navigation } = this.props;
+    // const { navigation } = this.props;
     return (
       <View style={styles.container}>
 
-        <TextInput style={styles.textinput}
-          underlineColorAndroid={'transparent'}
-          placeholder='email'
-        />
-        <TextInput style={styles.textinput}
-          underlineColorAndroid={'transparent'}
-          placeholder='password'
-          secureTextEntry={true}
-        />
-        <TouchableOpacity style={styles.button}
 
-          onPress={() => this.props.navigation.navigate('MentorPage')}
-          >
-          <Text style={styles.btntext}>Login</Text>
+        <TouchableOpacity style={styles.button}
+          // onPress={() => this.props.navigation.navigate('Add')}>
+        >
+          <Text style={styles.btntext}>Add an expertiseeeee</Text>
         </TouchableOpacity>
 
       </View>

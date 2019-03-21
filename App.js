@@ -6,6 +6,8 @@ import MentorLogin from './app/components/MentorLogin/MentorLogin';
 import AppNavigator from './AppNavigator';
 import PostalCode from './app/components/PostalCode/PostalCode';
 import Register from './app/components/Register/Register';
+import MentorPage from './app/components/MentorPage/MentorPage';
+import Add from './app/components/MentorPage/Add';
 
 const AppContainer = createAppContainer(AppNavigator);
 
@@ -28,6 +30,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+    paddingLeft: 60,
+    paddingRight: 60
   },
 });
 
