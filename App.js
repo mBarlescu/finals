@@ -7,7 +7,7 @@ import AppNavigator from './AppNavigator';
 import PostalCode from './app/components/PostalCode/PostalCode';
 import Register from './app/components/Register/Register';
 import MentorPage from './app/components/MentorPage/MentorPage';
-import Add from './app/components/MentorPage/Add';
+import Edit from './app/components/MentorPage/Edit';
 
 const AppContainer = createAppContainer(AppNavigator);
 
@@ -34,7 +34,6 @@ const styles = StyleSheet.create({
     paddingRight: 60
   },
 });
-
 
 
 

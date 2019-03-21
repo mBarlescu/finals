@@ -27,9 +27,9 @@ export default class MentorPage extends React.Component {
 
 
         <TouchableOpacity style={styles.button}
-          onPress={() => this.props.navigation.navigate('Add')}>
+          onPress={() => this.props.navigation.navigate('Edit')}>
 
-          <Text style={styles.btntext}>Add an expertise</Text>
+          <Text style={styles.btntext}>Edit</Text>
         </TouchableOpacity>
 
       </View>
