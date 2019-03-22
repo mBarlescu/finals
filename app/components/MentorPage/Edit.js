@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button, TextInput, TouchableOpacity, FlatList} from 'react-native';
-import { ListItem} from 'react-native-elements';
+import { ListItem, SearchBar} from 'react-native-elements';
 import axios from 'axios';
 
 export default class Edit extends React.Component {
@@ -10,7 +10,12 @@ export default class Edit extends React.Component {
       name: 'empty for now',
       loading: false,
       data: [],
+      error: null,
+      text: '',
+      subjects: [],
     }
+    let arrayholder = [];
+    let subjects = ['math', 'english', 'science']
 
 }
   componentDidMount() {
@@ -20,16 +25,67 @@ export default class Edit extends React.Component {
 
    makeRemoteRequest = () => {
     const {page, seed} = this.state
-    const url = `https://randomuser.me/api/?seed=${seed}&page=${page}&results=20`;
+    const url = `https://randomuser.me/api/?&results=20`;
+    this.setState({loading: true})
     axios.get(url)
       .then((res) => {
         console.log("POST RESPONSE: " , JSON.stringify(res));
-        this.setState({data: res.data.results})
+        this.setState({
+          data: res.data.results,
+          error: res.error || null,
+          loading: false,
+        })
+        this.data = res.data.results;
+
       })
       .catch((err) => {
+        this.setState({err, loading: false})
         console.log(err);
       })
   }
+
+  renderSeparator = () => {
+    return (
+      <View
+        style={{
+          height:1,
+          width: "86%",
+          backgroundColor: '#CED0CE',
+          marginLeft: "14%"
+        }}
+      >
+      </View>
+    );
+  };
+
+  searchFilterFunction = text => {
+    this.setState({text})
+    const newData= this.data.filter(item => {
+      const itemData= `${item.name.title.toUpperCase()}
+      ${item.name.first.toUpperCase()}
+      ${item.name.last.toUpperCase()}`;
+
+      const textData = text.toUpperCase();
+      return itemData.indexOf(textData) > -1;
+    });
+    this.setState({data: newData})
+  }
+
+  renderHeader = () => {
+    return (
+      <SearchBar
+        placeholder="Type here..."
+        lightTheme
+        round
+        onChangeText={text => this.searchFilterFunction(text)}
+        autoCorrect={false}
+        value= {this.state.text}
+      />
+    )
+  }
+
+
+
 
 
 
@@ -52,21 +108,27 @@ export default class Edit extends React.Component {
 
     // const { navigation } = this.props;
     return (
-
+      <View>
 
           <FlatList
             data={this.state.data}
+
             renderItem={({item}) => (
               <ListItem
                 roundAvatar
                 title={`${item.name.first} ${item.name.last}`}
                 subtitle={item.email}
                 avatar={{uri: item.picture.thumbnail}}
+                containerStyle={{borderBottomWidth: 0}}
               />
+
             )}
+            ItemSeparatorComponent= {this.renderSeparator}
+            ListHeaderComponent={this.renderHeader}
+            keyExtractor={item => item.email}
           />
 
-
+      </View>
     );
   }
 }
