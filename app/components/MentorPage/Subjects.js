@@ -56,11 +56,14 @@ delete = (subject) => {
 
     // const { navigation } = this.props;
     return (
-      <View>
+      <View style={styles.container}>
+        <View style={styles.innerContainer}>
         {
           this.state.subjects.map((subject) => {
             return (
-              <View key = {subject}>
+              <View
+               key = {subject}
+               style={styles.inner}>
                 <Text>{subject}</Text>
                 <TouchableOpacity
                 style={styles.button}
@@ -73,6 +76,24 @@ delete = (subject) => {
             )
           })
         }
+        </View>
+      <View stlye={styles.innerContainer2}>
+          <Text>Add a Subject</Text>
+          <FlatList
+            data={this.subjects}
+
+            renderItem={({item}) => (
+              <ListItem
+                roundAvatar
+                title={item}
+                containerStyle={{borderBottomWidth: 0}}
+              />
+
+            )}
+            // ListHeaderComponent={this.renderHeader}
+            keyExtractor={item => item}
+          />
+        </View>
       </View>
 
 
@@ -87,7 +108,32 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     paddingLeft: 60,
-    paddingRight: 60
+    paddingRight: 60,
+  },
+  inner: {
+    flexDirection: 'row',
+    flex: 1,
+  },
+
+  innerContainer: {
+
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingLeft: 60,
+    paddingRight: 60,
+
+    flex:1,
+  },
+  innerContainer2: {
+
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingLeft: 60,
+    paddingRight: 60,
+
+    flex:1,
   },
   textinput: {
     alignSelf: 'stretch',
@@ -103,6 +149,8 @@ const styles = StyleSheet.create({
     padding: 8,
     backgroundColor: '#59cbbd',
     marginTop: 8,
+    marginLeft: 10,
+    height: 40,
   },
   btntext: {
     color: '#fff',
