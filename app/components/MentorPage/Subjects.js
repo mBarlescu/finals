@@ -24,7 +24,16 @@ export default class Subjects extends React.Component {
   }
 
 
+delete = (subject) => {
+  console.log('delete here being fired', this.state.subjects)
+  const filtered = this.state.subjects.filter((x, i) => {
+    console.log('DUDE', subject)
+    return x !== subject
 
+  })
+  this.setState({subjects: filtered})
+  console.log('new', this.state.subjects)
+}
 
 
 
@@ -41,7 +50,6 @@ export default class Subjects extends React.Component {
 
 
   render() {
-    console.log('YO', this.state.data)
 
 
   // console.log('yoooooooooooooooooooooooooo', this.state.text)
@@ -51,11 +59,22 @@ export default class Subjects extends React.Component {
       <View>
         {
           this.state.subjects.map((subject) => {
-          return (<Text key={subject}>{subject}</Text>)
+            return (
+              <View key = {subject}>
+                <Text>{subject}</Text>
+                <TouchableOpacity
+                style={styles.button}
+                onPress={()=> this.delete(subject)}
+                >
+                <Text>Remove</Text>
+
+                </TouchableOpacity>
+              </View>
+            )
           })
         }
-
       </View>
+
 
     );
   }
