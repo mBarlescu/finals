@@ -32,7 +32,12 @@ export default class MentorPage extends React.Component {
           <Text style={styles.btntext}>Edit</Text>
         </TouchableOpacity>
 
-      </View>
+
+      <TouchableOpacity style={styles.button}
+        onPress={() => this.props.navigation.navigate('Subjects')}>
+        <Text stlye={styles.btntext}>Subjects</Text>
+      </TouchableOpacity>
+    </View>
     );
   }
 }

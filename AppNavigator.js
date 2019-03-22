@@ -7,7 +7,7 @@ import PostalCode from './app/components/PostalCode/PostalCode';
 import Register from './app/components/Register/Register';
 import MentorPage from './app/components/MentorPage/MentorPage';
 import Edit from './app/components/MentorPage/Edit';
-
+import Subjects from './app/components/MentorPage/Subjects';
 
 const AppNavigator = createStackNavigator({
   Home: Home,
@@ -16,6 +16,7 @@ const AppNavigator = createStackNavigator({
   Register: Register,
   MentorPage: MentorPage,
   Edit: Edit,
+  Subjects: Subjects,
 },
 {
   initialRouteName: "Home",

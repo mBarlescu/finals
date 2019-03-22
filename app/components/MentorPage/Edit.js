@@ -14,7 +14,7 @@ export default class Edit extends React.Component {
       text: '',
       subjects: [],
     }
-    let arrayholder = [];
+    let data = [];
     let subjects = ['math', 'english', 'science']
 
 }
